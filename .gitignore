@@ -1,0 +1,8 @@
+env/
+__pycache__/
+.cache
+.config
+.vscode
+.bash_history
+.bash_logout
+.bashrc

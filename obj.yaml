@@ -1,0 +1,7 @@
+apiVersion: nabinchhetri.com/v1
+kind: SSLMonitor
+metadata:
+  name: relambda-ssl
+spec:
+  domain_name: www.relambda.com
+
