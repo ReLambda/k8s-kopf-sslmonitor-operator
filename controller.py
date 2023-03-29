@@ -1,8 +1,12 @@
 import kopf
-import kubernetes
+# import kubernetes
 import ssl
 import socket
 import datetime
+
+@kopf.on.login()
+def login_fn(**kwargs):
+    return kopf.login_with_service_account(**kwargs) or kopf.login_with_kubeconfig(**kwargs)
 
 # register a function to be called when a resource is created.
 @kopf.on.create('nabinchhetri.com', 'v1', 'sslmonitor')
@@ -24,4 +28,3 @@ def get_ssl_expiry_date(domain_name):
             certExpires = datetime.datetime.strptime(
                     certificate["notAfter"], "%b %d %H:%M:%S %Y %Z")
         return certExpires
-

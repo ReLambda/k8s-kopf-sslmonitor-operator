@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ssl-operator
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      application: ssl-operator
+  template:
+    metadata:
+      labels:
+        application: ssl-operator
+    spec:
+      serviceAccountName: sslmonitor-sa
+      containers:
+      - name: sslmonitoring
+        image: nabinchhetri/sslmonitor:v1.0.2
