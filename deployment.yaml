@@ -15,4 +15,4 @@ spec:
       serviceAccountName: sslmonitor-sa
       containers:
         - name: sslmonitoring
-          image: nabinchhetri/sslmonitor:v1.0.9
+          image: nabinchhetri/sslmonitor:v1.1.4

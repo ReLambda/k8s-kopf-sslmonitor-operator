@@ -155,3 +155,20 @@ kubectl apply -f obj.yaml
 ```bash
 kubectl get ssl
 ```
+
+## Expiry notifications via GoogleChat
+- First you need to create a new space in googlechat spaces.
+- Then go to manage apps and integrations and click manage webhooks.
+- Create a new googlechat webhook and copy the googlechat webhook url.
+- Use the googlechat webhook  url in the manifests like like
+
+```bash
+apiVersion: nabinchhetri.com/v1
+kind: SSLMonitor
+metadata:
+  name: <sslmonitor-name>
+spec:
+  domain_name: <domain-name>
+  alert_threshold_days: <days> # default 30
+  googlechat_webhook_url: <url>
+```

@@ -26,6 +26,13 @@ spec:
                 domain_name:
                   type: string
                   description: The name of the domain/website.
+                googlechat_webhook_url:
+                  type: string
+                  description: It takes the googlechat webhook url to send alerts.
+                alert_threshold_days:
+                  type: integer
+                  description: It takes the number of  threshold days for ssl expiry to send alerts.
+                  default: 30
                 expiry_date:
                   type: string
                   description: The date of domain ssl expiry.
@@ -42,11 +49,16 @@ spec:
           priority: 0
           jsonPath: .spec.domain_name
           description: The name of the domain/website.
+        - name: "Alert Threshold Days"
+          type: integer
+          priority: 0
+          jsonPath: .spec.alert_threshold_days
+          description: It outputs the number of threshold days for ssl expiry to send alerts.
         - name: ExpiryDate
           type: string
           priority: 0
           jsonPath: .metadata.annotations.ExpiryDate
-          description: The date of domain ssl expiry
+          description: The date of domain ssl expiry.
         - name: DaysRemaining
           type: string
           priority: 0

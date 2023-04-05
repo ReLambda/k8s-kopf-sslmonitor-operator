@@ -4,3 +4,5 @@ metadata:
   name: relambda-ssl
 spec:
   domain_name: www.relambda.com
+  alert_threshold_days: 35 # default 30
+  googlechat_webhook_url: https://chat.googleapis.com/v1/spaces/AAAA835aoGE/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=TwACgD-VI5xTc2VYFB_TtocGG9lzXRVPhnydxoCbchY%3D
