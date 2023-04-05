@@ -1,8 +1,7 @@
 FROM python:3.8-alpine
-RUN pip3 install --upgrade pip
-
 WORKDIR src
-COPY requirements.txt ./requirements.txt
-RUN pip3 install -r requirements.txt
+COPY requirements.txt requirements.txt
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 COPY controller.py controller.py
-CMD kopf run -n * controller.py --verbose
+CMD kopf run -A controller.py --verbose

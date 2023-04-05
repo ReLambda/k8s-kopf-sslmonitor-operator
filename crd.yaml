@@ -1,14 +1,14 @@
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  name: sslmonitors.nabinchhetri.com 
+  name: sslmonitors.nabinchhetri.com
 spec:
   scope: Namespaced
   group: nabinchhetri.com
   names:
     kind: SSLMonitor
     plural: sslmonitors
-    singular: sslmonitor 
+    singular: sslmonitor
     shortNames:
       - ssl
   versions:
@@ -28,9 +28,9 @@ spec:
                   description: The name of the domain/website.
                 expiry_date:
                   type: string
-                  description: The date of domain ssl expiry. 
+                  description: The date of domain ssl expiry.
               required:
-               - domain_name
+                - domain_name
             status:
               type: object
               x-kubernetes-preserve-unknown-fields: true
@@ -52,4 +52,3 @@ spec:
           priority: 0
           jsonPath: .metadata.annotations.DaysRemaining
           description: The number of days left to expire ssl of a domain.
-
